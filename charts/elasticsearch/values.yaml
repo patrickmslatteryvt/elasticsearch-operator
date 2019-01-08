@@ -22,8 +22,8 @@ javaOpts: "-Xms256m -Xmx256m"
 use-ssl: True
 
 snapshot:
-  enabled: false
-  type: s3
+  enabled: true
+  type: azure
   bucketName: elasticsnapshots
   schedule: "@every 2m"
   image: upmcenterprises/elasticsearch-cron:0.0.4
@@ -34,7 +34,7 @@ snapshot:
 
 storage:
 # If class is set, then the other storage fields will not be used.
-#  class: local-storage
+  class: managed-premium
   # e.g. gp2 for AWS
   type: gp2
   # e.g. kubernetes.io/aws-ebs for AWS
@@ -43,11 +43,11 @@ storage:
   reclaimPolicy: Delete
 
 kibana:
-  enabled: false
+  enabled: true
   image: docker.elastic.co/kibana/kibana-oss:6.1.3
 
 cerebro:
-  enabled: false
+  enabled: true
   image: upmcenterprises/cerebro:0.6.8
 
 statsd:
