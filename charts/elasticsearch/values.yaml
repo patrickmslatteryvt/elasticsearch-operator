@@ -6,9 +6,9 @@ image:
   tag: 6.1.3_0
   #pullSecret: test
 
-clientReplicas: 1
-masterReplicas: 1
-dataReplicas: 1
+clientReplicas: 2
+masterReplicas: 3
+dataReplicas: 3
 dataVolumeSize: 1Gi
 javaOpts: "-Xms256m -Xmx256m"
 
